@@ -1,0 +1,50 @@
+" Insert mode key bindings
+inoremap jj <Esc>
+inoremap ##% %##-------------------------------<Esc>07lR 
+
+" Normal mode key bindings
+nnoremap <tab>d editor.action.peekDefinition
+" nnoremap <leader>t diwiTrue<Esc>
+" nnoremap <leader>f diwiFalse<Esc>
+nnoremap <leader>ri A.reset_index()<Esc>
+nnoremap <leader>rn A.reset_index(name='')<Esc>hi
+nnoremap <leader>sv A.sort_values(ascending=False)<Esc>
+nnoremap <leader>sq isql = '''<Enter>--begin-sql<Enter>select *<Enter>from <Enter>--end-sql<Enter><Esc>2k$a
+" nnoremap <leader>c $a.pipe(toex)<Esc>
+nnoremap <leader>c $a.to_clipboard(index=False)<Esc>
+nnoremap <leader>ac yypk$a.to_clipboard(index=False)<Esc>j$
+nnoremap <space> <leader><leader>s
+nnoremap <leader>v viw"0p
+nnoremap <C-n> :nohl<CR>
+nnoremap <leader>o o<esc>0"_D
+nnoremap <leader>O O<esc>0"_D
+nnoremap <home> jupyter.gotoPrevCellInFile
+nnoremap <end> jupyter.gotoNextCellInFile
+nnoremap <leader>q Iprint(f"{<esc>A = }")<esc>j0<esc>
+onoremap L $
+onoremap H ^
+vnoremap L $
+vnoremap H ^
+nnoremap L $
+nnoremap H ^
+nnoremap <C-k> editor.debug.action.toggleBreakpoint
+
+nnoremap <A-r> i<A-r><esc>
+nnoremap <A-q> i<A-q><esc>
+
+nnoremap <A-k> i<A-k><esc>
+nnoremap <A-j> i<A-j><esc>
+nnoremap <A-l> i<A-l><esc>
+nnoremap <A-h> i<A-h><esc>
+
+" nnoremap <A-k> workbench.action.debug.continue
+" nnoremap <A-j> workbench.action.debug.stepOver
+" nnoremap <A-l> workbench.action.debug.stepInto
+" nnoremap <A-h> workbench.action.debug.stepOut
+
+" nnoremap <C-l> workbench.action.navigateRight
+" nnoremap <C-h> workbench.action.navigateLeft
+" nnoremap <C-j> workbench.action.navigateDown
+" nnoremap <C-k> workbench.action.navigateUp
+" nnoremap <C-t> testing.runAll
+" nnoremap <C-t> <C-;>a
